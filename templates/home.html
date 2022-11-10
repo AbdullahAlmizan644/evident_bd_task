@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href={{ url_for ("static", filename="css/login.css" )}}>
+</head>
+
+<body>
+    <div class="container">
+        {% if "user" in session %}
+        <h1>Hi {{ session.user }}! <a href="/logout">Logout</a></h1>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <br>
+            <h2>{{ message }}</h2>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <form action="/" method="POST" id="home">
+            <input type="text" placeholder="Input Values" name="input_value" required>
+            <input type="number" placeholder="Search Value" name="search_value" required>
+
+            <button form="home">Search</button>
+        </form>
+    </div>
+</body>
+
+</html>
