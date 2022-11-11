@@ -1,13 +1,6 @@
 # Evident Task
 <h2>Link:</h2>https://task.aamizan.com/
 
-<h1>Tools and Technology</h1>
-For frontend design i use css flexblox and media query.
-</br>
-For backend devlopment i use Flask.i think for this type of small project flask microframework is better than other powerfull framework like djando
-</br>
-For databass i use flask_mysqldb module.i can do this with flask orm like flask sqlalchemy but i use flask_mysqldb and i connect databass with basic sql query.and i use mysql because i want to host it on my cpanel.
-
 
 <h1>How to use it</h1> 
 git clone 
@@ -68,4 +61,14 @@ go to 127.0.0.1:5000
 </br>
   
 ![image six](img/img6.png)
+  
+  
+ <h1>Tools and Technology</h1>
+<p>For frontend design i use css flexblox and media query.<p>
+</br>
+<p>For backend devlopment i use Flask.i think for this type of small project flask microframework is better than other powerfull framework like Django</p>
+</br>
+<p>For databass i use flask_mysqldb module.i can do this with flask orm like flask sqlalchemy but i use flask_mysqldb and i connect databass with basic sql query.and i use mysql because i want to host it on my cpanel.</p>
+
+
 
