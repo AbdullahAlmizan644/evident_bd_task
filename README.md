@@ -28,7 +28,9 @@ go to 127.0.0.1:5000
 
 <h4>first open the home page</h4>
 </br>
+
 ![image one](img/img1.png)
+
 </br>
 <h4>if you are not login.home page redirect you to login page.<h4>
 </br>
