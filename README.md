@@ -34,21 +34,30 @@ go to 127.0.0.1:5000
 </br>
 <h4>if you are not login.home page redirect you to login page.<h4>
 </br>
+  
 ![image two](img/img2.png)
+  
 </br>
 <h4>if you are not register you have to go sign up pageand fill the form with proper data.<h4>
 </br>
+  
 ![image three](img/img3.png)
+  
 </br>
 <h4>then go to login page and login <h4>
 </br>
+  
 ![image four](img/img4.png)
+  
 </br>
 <h4>now you can see result<h4>
 </br>
+  
 ![image five](img/img5.png)
+  
 </br>
 <h4>go to 127.0.0.1:5000/api_endpoint to view the api<h4>
 </br>
+  
 ![image six](img/img6.png)
 
