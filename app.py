@@ -10,6 +10,7 @@ app.config['MYSQL_USER']='root'
 app.config['MYSQL_PASSWORD']=''
 app.config['MYSQL_DB']='evident_task'
 
+
 mysql=MySQL(app)
 
 
