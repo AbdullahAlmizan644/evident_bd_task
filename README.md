@@ -63,11 +63,13 @@ go to 127.0.0.1:5000
 ![image six](img/img6.png)
   
   
- <h1>Tools and Technology</h1>
+<h1>Tools and Technology</h1>
+<h3>Frontend<h3/>
 <p>For frontend design i use css flexblox and media query.<p>
-</br>
-<p>For backend devlopment i use Flask.i think for this type of small project flask microframework is better than other powerfull framework like Django</p>
-</br>
+<h3>Backend<h3/>
+<p>For backend devlopment i use Flask.i think for this type of small project flask microframework is better than other powerfull framework like 
+  Django</p>
+<h3>Databass<h3/>
 <p>For databass i use flask_mysqldb module.i can do this with flask orm like flask sqlalchemy but i use flask_mysqldb and i connect databass with basic sql query.and i use mysql because i want to host it on my cpanel.</p>
 
 
