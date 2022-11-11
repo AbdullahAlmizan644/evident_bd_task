@@ -1,4 +1,4 @@
-from flask import Flask,render_template,redirect,request,session,flash
+from flask import Flask,render_template,redirect,request,session,flash,jsonify
 from flask_mysqldb import MySQL
 from datetime import datetime
 
@@ -20,11 +20,16 @@ def home():
             input_value=request.form.get("input_value")
             search_value=request.form.get("search_value")
 
-            f=input_value.split(",")
-            for num in f:
-                num=num+","
+            input_value_split=input_value.split(",")
+            input_value_int= list(map(int, input_value_split))           
+            input_value_sorted=sorted(input_value_int,reverse=True)
 
- 
+
+            data_string=""
+            for num in input_value_sorted:
+                data_string=data_string+str(num)+","
+
+
             cursor=mysql.connection.cursor()
             cursor.execute("SELECT * from users WHERE username=%s",(session["user"],))
             user=cursor.fetchone()
@@ -34,7 +39,8 @@ def home():
             mysql.connection.commit()
             cursor.close()
 
-            for number in f:
+
+            for number in input_value_split:
                 if number==search_value:
                     flash("Result:True")
                     return redirect(request.url)
@@ -56,8 +62,16 @@ def signup():
         password1=request.form.get("password1")
         password2=request.form.get("password2")
 
+        cursor=mysql.connection.cursor()
+        cursor.execute("SELECT * from users WHERE username=%s",(username,))
+        user=cursor.fetchone()
+
+
         if(len(username)<4):
             flash("Username must be greater than 4 words",category="error")
+
+        elif user:
+            flash("Username already exist",category="error")
 
         elif(len(email)<4):
             flash("email must be greater than 4 words",category="error")
@@ -67,6 +81,8 @@ def signup():
 
         elif(password1!=password2):
             flash("password doesn't match",category="error")
+
+
         
         else:
             cursor=mysql.connection.cursor()
@@ -100,6 +116,20 @@ def login():
 def logout():
     session.pop("user")
     return redirect("/login")
+
+
+@app.route("/api_endpoint")
+def api_endpoint():
+    if "user" in session:
+        cursor=mysql.connection.cursor()
+        cursor.execute("SELECT * FROM data Where username=%s",(session["user"],))
+        user_data=cursor.fetchall()
+        return jsonify(user_data)
+
+    else:
+        return redirect("login")
+
+
 
 
 
