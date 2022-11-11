@@ -1,5 +1,5 @@
 # Evident Task
-<h2>Link:<a href="https:task.aamizan.com">task.aamizan.com</a></h2>
+<h2>Link:</h2>https://task.aamizan.com/
 
 <h1>How to use it</h1> 
 git clone 
